@@ -1,0 +1,12 @@
+<div class="container">
+    <div class="row">
+        <div *ngFor="let album of albums" class="col-3">
+            <img class="img-fluid" src="{{ album.content }}" />
+            <p>{{ album.title }}</p>
+            <button class="btn btn-danger" (click)="deleteAlbum(album.id)">
+                Delete
+            </button>
+            <button class="btn btn-success" [routerLink]="['/update', album.id]">Update</button>
+        </div>
+    </div>
+</div>
